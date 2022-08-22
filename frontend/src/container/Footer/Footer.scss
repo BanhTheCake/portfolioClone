@@ -1,0 +1,229 @@
+#CONTACTS {
+    display: flex;
+    flex-direction: column;
+
+    padding: 6rem 2rem;
+
+    .app__footer-title {
+        margin-bottom: 6rem;
+
+        h3 {
+            font-size: 4rem;
+            text-align: center;
+
+            @media screen and (min-width: 2000px) {
+                font-size: 6rem;
+            }
+        }
+    }
+    .app__footer-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        margin-bottom: 6rem;
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+        }
+
+        & > div:first-child {
+            margin-right: 4rem;
+
+            @media screen and (max-width: 768px) {
+                margin-right: 4rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .app__footer-contact-item {
+            text-decoration: none;
+            color: black;
+
+            display: flex;
+            align-items: center;
+
+            width: fit-content;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-size: 1.6rem;
+
+            @media screen and (min-width: 2000px) {
+                padding: 1.4rem 3rem;
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
+
+            .icon {
+                font-size: 4rem;
+                margin-right: 2rem;
+                display: flex;
+
+                flex-shrink: 0;
+            }
+        }
+
+        .app__footer-email,
+        .app__footer-number {
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
+        }
+
+        .app__footer-email .app__footer-contact-item {
+            background-color: rgba(255, 99, 71, 0.2);
+
+            .icon {
+                color: #ff7675;
+            }
+        }
+
+        .app__footer-number .app__footer-contact-item {
+            background-color: var(--primary-color);
+
+            .icon {
+                color: #636e72;
+            }
+        }
+    }
+
+    .app__footer-feedback {
+        width: 60%;
+        margin: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 2000px) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 992px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        .app__footer-box {
+            width: 100%;
+
+            textarea,
+            input {
+                outline: none;
+                border: none;
+
+                width: 100%;
+                padding: 1.4rem;
+                margin-bottom: 2rem;
+                border-radius: 6px;
+
+                font-family: var(--font-base);
+                font-size: 1.6rem;
+                background-color: var(--primary-color);
+
+                @media screen and (min-width: 2000px) {
+                    font-size: 2.2rem;
+                    padding: 2rem;
+                }
+            }
+        }
+
+        .app__footer-box-textarea {
+            textarea {
+                width: 100%;
+                resize: vertical;
+                min-height: 200px;
+            }
+        }
+
+        & > button {
+            outline: none;
+            border: none;
+
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+
+            padding: 1rem 1.4rem;
+            margin: auto;
+            margin-top: 2rem;
+            border-radius: 6px;
+
+            font-family: var(--font-base);
+            font-weight: bold;
+            font-size: 1.6rem;
+
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            @media screen and (min-width: 2000px) {
+                font-size: 2.2rem;
+                padding: 1.6rem 2rem;
+            }
+
+            &:hover {
+                filter: brightness(80%);
+            }
+        }
+    }
+    .author {
+        margin-left: auto;
+        margin-top: 1rem;
+        color: transparent;
+    }
+
+    .secret {
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 4rem;
+        letter-spacing: 0.04rem;
+        font-weight: bold;
+
+        background: -moz-linear-gradient(
+            90deg,
+            rgba(162, 155, 254, 1) 0%,
+            rgba(0, 188, 212, 1) 48%,
+            rgba(238, 130, 238, 1) 100%
+        );
+        background: -webkit-linear-gradient(
+            90deg,
+            rgba(162, 155, 254, 1) 0%,
+            rgba(0, 188, 212, 1) 48%,
+            rgba(238, 130, 238, 1) 100%
+        );
+        background: -o-linear-gradient(
+            90deg,
+            rgba(162, 155, 254, 1) 0%,
+            rgba(0, 188, 212, 1) 48%,
+            rgba(238, 130, 238, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee82ee', endColorstr='#A29BFE', GradientType=0 );
+        background: -ms-linear-gradient(
+            90deg,
+            rgba(162, 155, 254, 1) 0%,
+            rgba(0, 188, 212, 1) 48%,
+            rgba(238, 130, 238, 1) 100%
+        );
+        background: linear-gradient(
+            90deg,
+            rgba(162, 155, 254, 1) 0%,
+            rgba(0, 188, 212, 1) 48%,
+            rgba(238, 130, 238, 1) 100%
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
