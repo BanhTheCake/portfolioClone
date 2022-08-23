@@ -4,6 +4,7 @@ import { Navbar } from './components'
 import Social from './components/Social/Social';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Test from './container/Test/Test';
 
 function App() {
 

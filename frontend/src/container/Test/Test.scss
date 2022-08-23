@@ -1,0 +1,21 @@
+.app__test {
+    width: 100%;
+    margin: auto;
+    padding: 4rem;
+    .app__swiper {
+        background-color: var(--lightGray-color);
+        .app__item {
+            height: 100%;
+            // background-color: tomato;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            img {
+                width: 150px;
+                // height: 100px;
+                object-fit: cover;
+            }
+        }
+    }
+}

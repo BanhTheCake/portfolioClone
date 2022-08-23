@@ -1,5 +1,6 @@
 import React from 'react';
 import './Testimonial.scss';
+import 'swiper/css';
 import { BsBoxArrowInLeft } from 'react-icons/bs';
 import { BsBoxArrowInRight } from 'react-icons/bs';
 import { images } from '../../constants';
@@ -7,16 +8,15 @@ import { useEffect } from 'react';
 import client, { urlFor } from '../../clientSanity';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import wrapperAnimate from '../../Wrapper/wrapperAnimate'
-import {Swiper, SwiperSlide} from 'swiper/react';
-import { Autoplay } from "swiper";
-import 'swiper/css';
+import wrapperAnimate from '../../Wrapper/wrapperAnimate';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
 const Testimonial = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     const [currentIndexFeedback, setCurrentIndexFeedback] = useState(0);
     const [currentFeedback, setCurrentFeedback] = useState({});
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const query = '*[_type == "testimonials"]';
@@ -48,19 +48,19 @@ const Testimonial = () => {
     };
 
     useEffect(() => {
-      setCurrentFeedback(feedbacks[currentIndexFeedback])
-    }, [currentIndexFeedback, feedbacks])
+        setCurrentFeedback(feedbacks[currentIndexFeedback]);
+    }, [currentIndexFeedback, feedbacks]);
 
     return (
         <div id="TESTIMONIAL">
             <div className="app__testimonial-wrapper">
                 {currentFeedback && Object.keys(currentFeedback).length > 0 && (
-                    <AnimatePresence mode='wait'>
+                    <AnimatePresence mode="wait">
                         <motion.div
                             key={currentFeedback._id}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{duration: 0.2}}
+                            transition={{ duration: 0.2 }}
                             className="app__testimonial-box"
                         >
                             <div className="app__testimonial-img">
@@ -102,6 +102,42 @@ const Testimonial = () => {
                     <img src={images.spotify} alt="" />
                 </div>
             </div>
+            <Swiper
+                className="app__swiper"
+                slidesPerView={1}
+                loop={true}
+                breakpoints={{
+                    378: {
+                        slidesPerView: 2,
+                    },
+                }}
+                autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
+            >
+                <SwiperSlide>
+                    <div className="app__item">
+                        <img src={images.amazon} alt="" />
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="app__item">
+                        <img src={images.nb} alt="" />
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="app__item">
+                        <img src={images.skype} alt="" />
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="app__item">
+                        <img src={images.spotify} alt="" />
+                    </div>
+                </SwiperSlide>
+            </Swiper>
         </div>
     );
 };

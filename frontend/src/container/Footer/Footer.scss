@@ -65,6 +65,12 @@
                 width: 100%;
             }
 
+            & > p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
             .icon {
                 font-size: 4rem;
                 margin-right: 2rem;
