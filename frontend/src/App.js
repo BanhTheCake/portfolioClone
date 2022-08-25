@@ -16,18 +16,11 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(true)
 
-  const handleLoaded = useCallback(() => {
+  useEffect(() => {
     setTimeout(() => {
       setIsLoaded(false)
     }, 1000)
   }, [])
-
-  useEffect(() => {
-    window.addEventListener('load', handleLoaded)
-    return () => {
-      window.removeEventListener('load', handleLoaded)
-    }
-  })
 
   
 
